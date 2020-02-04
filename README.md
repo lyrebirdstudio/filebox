@@ -103,6 +103,12 @@ FileBoxProvider.newInstance(applicationContext, FileBoxConfig.createDefault())
     }
 ```
 
+## Destroy
+
+```kotlin
+filebox.destroy()
+```
+
 # Setup
 ```groovy
 allprojects {
