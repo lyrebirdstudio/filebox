@@ -17,7 +17,7 @@ FileBox;
 * Supports the File Encryption for sensitive URL(images, videos, any file).
 * Allows you to create custom folder destination.
 * Clears unreliable data automagically. 
-* Does Etag Check. Filebox don't download the file again If file's TLL is up but the file has not changes.
+* Does Etag Check. Filebox doesn't download the file again If file's TLL is up but the file has not changes.
 * Supports Multiple Download. If you have N file and want to get notified when all completed.
 * Runs on application scope. There is no pause/resume continuation support.
 
@@ -35,8 +35,9 @@ FileBox;
 ```kotlin
 val fileBoxRequest = FileBoxRequest("https://url1.png")
 
-FileBoxProvider.newInstance(applicationContext, FileBoxConfig.createDefault())
-    .get(fileBoxRequest)
+val filebox= FileBoxProvider.newInstance(applicationContext, FileBoxConfig.createDefault())
+
+filebox.get(fileBoxRequest)
     .subscribeOn(Schedulers.io())
     .observeOn(AndroidSchedulers.mainThread())
     .subscribe { fileBoxResponse ->
@@ -80,8 +81,8 @@ val fileBoxMultipleRequest = FileBoxMultiRequest(
             )
         )
 
-FileBoxProvider.newInstance(applicationContext, FileBoxConfig.createDefault())
-    .get(fileBoxMultipleRequest)
+val filebox = FileBoxProvider.newInstance(applicationContext, FileBoxConfig.createDefault())
+filebox.get(fileBoxMultipleRequest)
     .subscribeOn(Schedulers.io())
     .observeOn(AndroidSchedulers.mainThread())
     .subscribe { fileBoxResponse ->
@@ -103,6 +104,8 @@ FileBoxProvider.newInstance(applicationContext, FileBoxConfig.createDefault())
 ```
 
 ## Destroy
+
+Don't forget to destroy filebox when you initialized scope is destroyed. If you create filebox in your application class, It is application scoped. If you create filebox in your activity class, It is activity scoped. Be aware of your lifecycle.
 
 ```kotlin
 filebox.destroy()
