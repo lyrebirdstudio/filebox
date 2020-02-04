@@ -82,6 +82,7 @@ val fileBoxMultipleRequest = FileBoxMultiRequest(
         )
 
 val filebox = FileBoxProvider.newInstance(applicationContext, FileBoxConfig.createDefault())
+
 filebox.get(fileBoxMultipleRequest)
     .subscribeOn(Schedulers.io())
     .observeOn(AndroidSchedulers.mainThread())
