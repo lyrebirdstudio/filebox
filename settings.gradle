@@ -1,0 +1,2 @@
+include ':app', ':fileboxlib'
+rootProject.name='filebox'
