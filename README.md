@@ -21,15 +21,14 @@ FileBox;
 * Supports Multiple Download. If you have N file and want to get notified when all completed.
 * Runs on application scope. There is no pause/resume continuation support.
 
-## Modules
-<p align="center">
-  <img src="https://raw.githubusercontent.com/lyrebirdstudio/filebox/master/art/filebox_modules.png">
-</p>
-
-
 ## Flow Diagram
 <p align="center">
   <img src="https://raw.githubusercontent.com/lyrebirdstudio/filebox/master/art/diagram_filebox.png">
+</p>
+
+## Modules
+<p align="center">
+  <img src="https://raw.githubusercontent.com/lyrebirdstudio/filebox/master/art/filebox_modules.png">
 </p>
 
 ## Basic Usage
