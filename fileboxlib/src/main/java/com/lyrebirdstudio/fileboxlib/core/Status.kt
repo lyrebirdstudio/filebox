@@ -1,5 +1,5 @@
 package com.lyrebirdstudio.fileboxlib.core
 
-enum class Status {
+internal enum class Status {
     LOADING, SUCCESS, ERROR
 }
