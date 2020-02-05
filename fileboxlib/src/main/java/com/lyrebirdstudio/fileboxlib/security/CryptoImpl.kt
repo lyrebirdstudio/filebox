@@ -6,9 +6,8 @@ import com.lyrebirdstudio.fileboxlib.core.CryptoType
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import java.io.*
-import java.lang.Exception
 
-class CryptoImpl(context: Context) : Crypto {
+internal class CryptoImpl(context: Context) : Crypto {
 
     private val appContext: Context = context.applicationContext
 
