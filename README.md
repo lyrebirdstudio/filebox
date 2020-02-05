@@ -17,7 +17,7 @@ FileBox;
 * Supports the File Encryption for sensitive URL(images, videos, any file).
 * Allows you to create a custom folder destination.
 * Clears unreliable data automagically. 
-* Does Etag Check. Filebox doesn't download the file again If the file's TLL is up but the file has not changed.
+* Does Etag Check. Filebox doesn't download the file again If the file's TLL(Time To Live) is up but the file has not changed.
 * Supports Multiple Download. If you have N file and want to get notified when all completed.
 * Runs on application scope. There is no pause/resume continuation support.
 
