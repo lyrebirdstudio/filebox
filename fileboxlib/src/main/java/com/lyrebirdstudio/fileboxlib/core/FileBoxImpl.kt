@@ -2,33 +2,32 @@ package com.lyrebirdstudio.fileboxlib.core
 
 import android.annotation.SuppressLint
 import android.content.Context
+import com.lyrebirdstudio.fileboxlib.core.extensions.plusAssign
 import com.lyrebirdstudio.fileboxlib.core.mapper.DownloadToFileBoxResponseMapper
 import com.lyrebirdstudio.fileboxlib.core.sync.SyncController
-import com.lyrebirdstudio.fileboxlib.core.extensions.plusAssign
-import com.lyrebirdstudio.fileboxlib.filesystem.FileControllerFactory
-import com.lyrebirdstudio.fileboxlib.recorder.Recorder
-import com.lyrebirdstudio.fileboxlib.recorder.client.ReliabilityCheckerImpl
-import com.lyrebirdstudio.fileboxlib.recorder.client.RoomRecorderCreator
-import com.lyrebirdstudio.fileboxlib.urlresolver.UrlResolver
-import com.lyrebirdstudio.fileboxlib.urlresolver.UrlResolverFactory
 import com.lyrebirdstudio.fileboxlib.downloader.DownloadRequest
 import com.lyrebirdstudio.fileboxlib.downloader.DownloadResponse
 import com.lyrebirdstudio.fileboxlib.downloader.Downloader
 import com.lyrebirdstudio.fileboxlib.downloader.DownloaderFactory
+import com.lyrebirdstudio.fileboxlib.filesystem.FileControllerFactory
+import com.lyrebirdstudio.fileboxlib.recorder.Recorder
+import com.lyrebirdstudio.fileboxlib.recorder.client.ReliabilityCheckerImpl
+import com.lyrebirdstudio.fileboxlib.recorder.client.RoomRecorderCreator
 import com.lyrebirdstudio.fileboxlib.security.Crypto
 import com.lyrebirdstudio.fileboxlib.security.CryptoFactory
 import com.lyrebirdstudio.fileboxlib.security.CryptoProcess
-import io.reactivex.*
+import com.lyrebirdstudio.fileboxlib.urlresolver.UrlResolver
+import com.lyrebirdstudio.fileboxlib.urlresolver.UrlResolverFactory
+import io.reactivex.BackpressureStrategy
+import io.reactivex.Flowable
+import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import java.io.File
-import java.lang.IllegalArgumentException
-import java.lang.IllegalStateException
 import java.util.*
 
-internal class FileBoxImpl(context: Context, fileBoxConfig: FileBoxConfig) :
-    FileBox {
+internal class FileBoxImpl(context: Context, fileBoxConfig: FileBoxConfig) : FileBox {
 
     /**
      * Ensure if app context
@@ -38,8 +37,7 @@ internal class FileBoxImpl(context: Context, fileBoxConfig: FileBoxConfig) :
     /**
      * Check if data is reliable
      */
-    private val reliabilityChecker =
-        ReliabilityCheckerImpl(fileBoxConfig.timeToLiveInMillis)
+    private val reliabilityChecker = ReliabilityCheckerImpl(fileBoxConfig.timeToLiveInMillis)
 
     /**
      * Resolve Url to file name and extension
@@ -83,14 +81,12 @@ internal class FileBoxImpl(context: Context, fileBoxConfig: FileBoxConfig) :
      * We launch syncer in initialize state to check invalid data and
      * deletes them.
      */
-    private val syncController =
-        SyncController(recorder, fileController)
+    private val syncController = SyncController(recorder, fileController)
 
     /**
      * Map downloaded response to file box response
      */
-    private val fileBoxResponseMapper =
-        DownloadToFileBoxResponseMapper()
+    private val fileBoxResponseMapper = DownloadToFileBoxResponseMapper()
 
     /**
      * Caches ongoing operations, emits latest state to subscribers

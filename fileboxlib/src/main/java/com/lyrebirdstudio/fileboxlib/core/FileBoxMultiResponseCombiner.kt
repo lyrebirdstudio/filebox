@@ -3,7 +3,7 @@ package com.lyrebirdstudio.fileboxlib.core
 import io.reactivex.Flowable
 import io.reactivex.functions.Function
 
-class FileBoxMultiResponseCombiner private constructor() :
+internal class FileBoxMultiResponseCombiner private constructor() :
     Function<Array<Any>, FileBoxMultiResponse> {
 
     override fun apply(t: Array<Any>): FileBoxMultiResponse {
