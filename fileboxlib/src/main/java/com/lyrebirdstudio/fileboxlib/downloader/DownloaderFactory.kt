@@ -5,7 +5,7 @@ import com.lyrebirdstudio.fileboxlib.downloader.client.DownloaderClientConfigBui
 import com.lyrebirdstudio.fileboxlib.downloader.client.DownloaderClientFactory
 import com.lyrebirdstudio.fileboxlib.security.Crypto
 
-object DownloaderFactory {
+internal object DownloaderFactory {
 
     fun create(crypto: Crypto): Downloader {
         val downloaderClientConfig = DownloaderClientConfigBuilder.Builder().build()

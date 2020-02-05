@@ -6,7 +6,7 @@ import java.io.File
 import java.io.InputStream
 import java.io.OutputStream
 
-interface Crypto {
+internal interface Crypto {
 
     fun encrypt(originFile: File, destinationFile: File): Flowable<CryptoProcess>
 
