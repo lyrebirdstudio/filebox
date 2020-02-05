@@ -62,7 +62,7 @@ filebox.get(fileBoxRequest)
 
 ```kotlin
 val fileBoxConfig = FileBoxConfig.FileBoxConfigBuilder()
-        .setCryptoType(CryptoType.CONCEAL) // Default is Conceal.NONE
+        .setCryptoType(CryptoType.CONCEAL) // Default is CryptoType.NONE
         .setTTLInMillis(TimeUnit.DAYS.toMillis(7)) // Default is 7 Days
         .setDirectory(DirectoryType.CACHE) // Default is External
         .setFolderName("MyPhotos") // Default is none
