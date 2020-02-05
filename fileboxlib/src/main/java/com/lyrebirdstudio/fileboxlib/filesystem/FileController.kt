@@ -5,7 +5,7 @@ import io.reactivex.Completable
 import io.reactivex.Single
 import java.io.File
 
-interface FileController{
+internal interface FileController{
 
     fun createFile(resolvedUrlData: ResolvedUrlData): File
 
