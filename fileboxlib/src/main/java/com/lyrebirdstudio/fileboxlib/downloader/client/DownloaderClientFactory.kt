@@ -1,24 +1,24 @@
 package com.lyrebirdstudio.fileboxlib.downloader.client
 
-import com.lyrebirdstudio.fileboxlib.downloader.client.okhttp.OkhttpDownloaderClient
+import com.lyrebirdstudio.fileboxlib.downloader.client.okhttp.OkHttpDownloaderClient
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
 object DownloaderClientFactory {
 
     fun create(config: DownloaderClientConfig = defaultConfig()): DownloaderClient {
-        return getOkhttpDownloaderClient(
+        return getOkHttpDownloaderClient(
             config
         )
     }
 
-    private fun getOkhttpDownloaderClient(config: DownloaderClientConfig): DownloaderClient {
-        val okhttpClient = OkHttpClient.Builder()
+    private fun getOkHttpDownloaderClient(config: DownloaderClientConfig): DownloaderClient {
+        val okHttpClient = OkHttpClient.Builder()
             .connectTimeout(config.connectionTimeoutInMillis, TimeUnit.MILLISECONDS)
             .readTimeout(config.readTimeoutInMillis, TimeUnit.MILLISECONDS)
             .build()
-        return OkhttpDownloaderClient(
-            okhttpClient
+        return OkHttpDownloaderClient(
+            okHttpClient
         )
     }
 
