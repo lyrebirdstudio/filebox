@@ -4,7 +4,7 @@ import com.lyrebirdstudio.fileboxlib.core.Record
 import io.reactivex.Completable
 import io.reactivex.Single
 
-interface Recorder {
+internal interface Recorder {
 
     fun create(record: Record): Completable
 

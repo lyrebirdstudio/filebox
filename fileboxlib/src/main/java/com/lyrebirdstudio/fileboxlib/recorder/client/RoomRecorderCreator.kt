@@ -3,7 +3,7 @@ package com.lyrebirdstudio.fileboxlib.recorder.client
 import android.content.Context
 import com.lyrebirdstudio.fileboxlib.recorder.Recorder
 
-object RoomRecorderCreator {
+internal object RoomRecorderCreator {
 
     fun create(context: Context, recorderNameSuffix: String): Recorder {
         val roomMapper = RoomMapper()
