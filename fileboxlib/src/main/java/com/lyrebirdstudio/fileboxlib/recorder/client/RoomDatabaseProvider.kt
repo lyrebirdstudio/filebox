@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.lyrebirdstudio.fileboxlib.BuildConfig
 
-class RoomDatabaseProvider(
+internal class RoomDatabaseProvider(
     private val appContext: Context,
     private val databaseNameSuffix: String
 ) {

@@ -7,7 +7,7 @@ import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 
-class RoomRecorder(
+internal class RoomRecorder(
     private val mapper: RoomMapper,
     private val roomRecorderDao: RoomRecorderDao
 ) : Recorder {

@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "record_entity")
-class RecordEntity(
+internal class RecordEntity(
     @PrimaryKey @ColumnInfo(name = "url") val url: String,
     @ColumnInfo(name = "file_name") val fileName: String,
     @ColumnInfo(name = "encoded_file_name") val encodedFileName: String,

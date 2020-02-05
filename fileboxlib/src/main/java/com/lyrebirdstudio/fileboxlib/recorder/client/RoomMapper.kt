@@ -4,7 +4,7 @@ import com.lyrebirdstudio.fileboxlib.core.CryptoType
 import com.lyrebirdstudio.fileboxlib.core.Record
 import com.lyrebirdstudio.fileboxlib.recorder.RecordMapper
 
-class RoomMapper : RecordMapper<RecordEntity> {
+internal class RoomMapper : RecordMapper<RecordEntity> {
 
     override fun mapTo(record: Record): RecordEntity {
         return RecordEntity(
