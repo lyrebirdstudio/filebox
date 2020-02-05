@@ -2,7 +2,7 @@ package com.lyrebirdstudio.fileboxlib.downloader.client
 
 import java.util.concurrent.TimeUnit
 
-interface DownloaderClientConfigBuilder {
+internal interface DownloaderClientConfigBuilder {
 
     fun build(): DownloaderClientConfig
 

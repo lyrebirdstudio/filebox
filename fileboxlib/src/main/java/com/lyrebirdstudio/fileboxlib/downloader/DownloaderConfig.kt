@@ -1,6 +1,6 @@
 package com.lyrebirdstudio.fileboxlib.downloader
 
-data class DownloaderConfig(val bufferSize: Int) {
+internal data class DownloaderConfig(val bufferSize: Int) {
 
     companion object {
 

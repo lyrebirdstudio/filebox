@@ -1,6 +1,6 @@
 package com.lyrebirdstudio.fileboxlib.downloader.client
 
-data class DownloaderClientConfig(
+internal data class DownloaderClientConfig(
     val connectionTimeoutInMillis: Long,
     val readTimeoutInMillis: Long
 )

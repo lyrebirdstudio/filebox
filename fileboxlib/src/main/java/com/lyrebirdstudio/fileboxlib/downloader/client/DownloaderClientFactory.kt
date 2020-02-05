@@ -4,7 +4,7 @@ import com.lyrebirdstudio.fileboxlib.downloader.client.okhttp.OkHttpDownloaderCl
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
-object DownloaderClientFactory {
+internal object DownloaderClientFactory {
 
     fun create(config: DownloaderClientConfig = defaultConfig()): DownloaderClient {
         return getOkHttpDownloaderClient(config)
