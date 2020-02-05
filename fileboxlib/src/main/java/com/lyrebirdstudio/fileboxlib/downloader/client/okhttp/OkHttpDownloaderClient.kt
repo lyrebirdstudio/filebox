@@ -8,10 +8,8 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import java.io.IOException
-import java.lang.Exception
 
-class OkHttpDownloaderClient(private val okHttpClient: OkHttpClient) :
-    DownloaderClient {
+internal class OkHttpDownloaderClient(private val okHttpClient: OkHttpClient) : DownloaderClient {
 
     override fun execute(downloaderClientRequest: DownloaderClientRequest): Single<DownloaderClientResponse> {
         return Single.create {

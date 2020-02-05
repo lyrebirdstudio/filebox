@@ -7,9 +7,7 @@ import java.util.concurrent.TimeUnit
 object DownloaderClientFactory {
 
     fun create(config: DownloaderClientConfig = defaultConfig()): DownloaderClient {
-        return getOkHttpDownloaderClient(
-            config
-        )
+        return getOkHttpDownloaderClient(config)
     }
 
     private fun getOkHttpDownloaderClient(config: DownloaderClientConfig): DownloaderClient {
@@ -17,9 +15,8 @@ object DownloaderClientFactory {
             .connectTimeout(config.connectionTimeoutInMillis, TimeUnit.MILLISECONDS)
             .readTimeout(config.readTimeoutInMillis, TimeUnit.MILLISECONDS)
             .build()
-        return OkHttpDownloaderClient(
-            okHttpClient
-        )
+
+        return OkHttpDownloaderClient(okHttpClient)
     }
 
     private fun defaultConfig() = DownloaderClientConfigBuilder.Builder().build()

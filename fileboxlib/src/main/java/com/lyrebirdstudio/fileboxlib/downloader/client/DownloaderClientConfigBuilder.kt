@@ -12,11 +12,9 @@ interface DownloaderClientConfigBuilder {
 
     class Builder : DownloaderClientConfigBuilder {
 
-        private var connectionTimeoutInMillis =
-            Defaults.connectionTimeout()
+        private var connectionTimeoutInMillis = Defaults.connectionTimeout()
 
-        private var readTimeoutInMillis =
-            Defaults.readTimeout()
+        private var readTimeoutInMillis = Defaults.readTimeout()
 
         override fun connectionTimeout(
             duration: Long,
