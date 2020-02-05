@@ -1,8 +1,8 @@
 package com.lyrebirdstudio.fileboxlib.core.sync
 
-import com.lyrebirdstudio.fileboxlib.core.sync.model.InvalidDataState
 import com.lyrebirdstudio.fileboxlib.core.Record
 import com.lyrebirdstudio.fileboxlib.core.extensions.plusAssign
+import com.lyrebirdstudio.fileboxlib.core.sync.model.InvalidDataState
 import com.lyrebirdstudio.fileboxlib.filesystem.FileController
 import com.lyrebirdstudio.fileboxlib.recorder.Recorder
 import io.reactivex.Completable
@@ -13,7 +13,10 @@ import io.reactivex.schedulers.Schedulers
 import java.io.File
 import java.util.*
 
-class SyncController(private val recorder: Recorder, private val fileController: FileController) {
+internal class SyncController(
+    private val recorder: Recorder,
+    private val fileController: FileController
+) {
 
     private var disposable: CompositeDisposable = CompositeDisposable()
 

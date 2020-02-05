@@ -14,11 +14,11 @@ object FileControllerFactory {
         folderName: String
     ): FileController {
         val rootFileProvider = RootFileFactory.create(context, directoryType)
-        return FileController(rootFileProvider, folderName)
+        return FileControllerImpl(rootFileProvider, folderName)
     }
 
     fun createTemporaryDirectory(context: Context): FileController {
         val rootFileProvider = RootFileFactory.create(context, DirectoryType.CACHE)
-        return FileController(rootFileProvider, TEMPORARY_FILE_NAME)
+        return FileControllerImpl(rootFileProvider, TEMPORARY_FILE_NAME)
     }
 }
