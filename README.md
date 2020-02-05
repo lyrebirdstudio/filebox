@@ -5,19 +5,19 @@
 
 ## What is FileBox
 
-FileBox is a async file downloader library for Android. 
+FileBox is an async file downloader library for Android. 
 
-Before we develop filebox, we though that URL content changes very rarely. So basically this library downloads given URL, and if it is already downloaded, provides downloaded content directly.
+Before we develop filebox, we though that URL content changes very rarely. So basically this library downloads a given URL, and if it is already downloaded, it provides downloaded content directly.
 
 FileBox;
 
-* Shares ongoing download request to the observers. So It reduces Data Usage.
+* Shares ongoing download requests to the observers. So It reduces Data Usage.
 * Has TTL(Time To Live) duration. Filebox re-download the URL if TTL is expired.
 * Supports both Cache and External directory.
 * Supports the File Encryption for sensitive URL(images, videos, any file).
-* Allows you to create custom folder destination.
+* Allows you to create a custom folder destination.
 * Clears unreliable data automagically. 
-* Does Etag Check. Filebox doesn't download the file again If file's TLL is up but the file has not changes.
+* Does Etag Check. Filebox doesn't download the file again If the file's TLL is up but the file has not changed.
 * Supports Multiple Download. If you have N file and want to get notified when all completed.
 * Runs on application scope. There is no pause/resume continuation support.
 
@@ -62,10 +62,10 @@ filebox.get(fileBoxRequest)
 
 ```kotlin
 val fileBoxConfig = FileBoxConfig.FileBoxConfigBuilder()
-        .setCryptoType(CryptoType.CONCEAL)
-        .setTTLInMillis(TimeUnit.DAYS.toMillis(7))
-        .setDirectory(DirectoryType.CACHE)
-        .setFolderName("MyPhotos")
+        .setCryptoType(CryptoType.CONCEAL) // Default is Conceal.NONE
+        .setTTLInMillis(TimeUnit.DAYS.toMillis(7)) // Default is 7 Days
+        .setDirectory(DirectoryType.CACHE) // Default is External
+        .setFolderName("MyPhotos") // Default is none
         .build()
 ```
 
@@ -106,7 +106,7 @@ filebox.get(fileBoxMultipleRequest)
 
 ## Destroy
 
-Don't forget to destroy filebox when you initialized scope is destroyed. If you create filebox in your application class, It is application scoped. If you create filebox in your activity class, It is activity scoped. Be aware of your lifecycle.
+Don't forget to destroy the filebox when your initialized scope is destroyed. If you create a filebox in your application class, It is application scoped. If you create a filebox in your activity class, It is activity scoped. Be aware of your lifecycle.
 
 ```kotlin
 filebox.destroy()
