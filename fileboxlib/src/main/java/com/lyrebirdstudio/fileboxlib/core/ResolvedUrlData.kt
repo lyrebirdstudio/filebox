@@ -1,6 +1,6 @@
 package com.lyrebirdstudio.fileboxlib.core
 
-data class ResolvedUrlData(
+internal data class ResolvedUrlData(
     val fileName: String,
     val encodedFileName: String,
     val fileExtension: FileExtension,

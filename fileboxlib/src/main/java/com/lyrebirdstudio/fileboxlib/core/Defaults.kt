@@ -2,7 +2,7 @@ package com.lyrebirdstudio.fileboxlib.core
 
 import java.util.concurrent.TimeUnit
 
-object Defaults {
+internal object Defaults {
 
     fun directory(): DirectoryType = DirectoryType.EXTERNAL
 
