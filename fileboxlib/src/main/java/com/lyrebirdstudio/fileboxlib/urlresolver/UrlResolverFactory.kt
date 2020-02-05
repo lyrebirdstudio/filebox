@@ -1,6 +1,6 @@
 package com.lyrebirdstudio.fileboxlib.urlresolver
 
-object UrlResolverFactory {
+internal object UrlResolverFactory {
 
     fun create(): UrlResolver {
         return DefaultUrlResolver()
