@@ -4,12 +4,11 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.lyrebirdstudio.fileboxlib.recorder.client.RecordEntity
 import io.reactivex.Completable
 import io.reactivex.Single
 
 @Dao
-interface RoomRecorderDao {
+internal interface RoomRecorderDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun create(recordEntity: RecordEntity): Completable

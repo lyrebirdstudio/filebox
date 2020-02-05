@@ -1,7 +1,6 @@
 package com.lyrebirdstudio.fileboxlib.error
 
-class DefaultErrorHandler : ErrorHandler {
+internal class DefaultErrorHandler : ErrorHandler {
 
-    override fun handle(throwable: Throwable) {
-    }
+    override fun handle(throwable: Throwable) {}
 }

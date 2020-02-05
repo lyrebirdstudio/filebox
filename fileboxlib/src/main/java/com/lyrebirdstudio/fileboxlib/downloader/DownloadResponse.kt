@@ -2,7 +2,7 @@ package com.lyrebirdstudio.fileboxlib.downloader
 
 import com.lyrebirdstudio.fileboxlib.core.Record
 
-sealed class DownloadResponse(open val record: Record) {
+internal sealed class DownloadResponse(open val record: Record) {
 
     class Started(
         override val record: Record,

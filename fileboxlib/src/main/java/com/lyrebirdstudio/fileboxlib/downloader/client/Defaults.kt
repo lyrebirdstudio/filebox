@@ -2,7 +2,7 @@ package com.lyrebirdstudio.fileboxlib.downloader.client
 
 import java.util.concurrent.TimeUnit
 
-object Defaults {
+internal object Defaults {
 
     fun connectionTimeout(): Long {
         return TimeUnit.SECONDS.toMillis(60)

@@ -4,7 +4,7 @@ import com.lyrebirdstudio.fileboxlib.core.Record
 import io.reactivex.functions.BiFunction
 import java.io.File
 
-class InvalidRecordsCheckerFunction : BiFunction<List<Record>, List<File>, List<Record>> {
+internal class InvalidRecordsCheckerFunction : BiFunction<List<Record>, List<File>, List<Record>> {
 
     override fun apply(records: List<Record>, files: List<File>): List<Record> {
 

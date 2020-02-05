@@ -39,7 +39,8 @@ data class Record(
     companion object {
 
         fun empty() = Record(
-            "", "",
+            url = "",
+            originalFilePath = "",
             fileName = "",
             encodedFileName = "",
             fileExtension = "",

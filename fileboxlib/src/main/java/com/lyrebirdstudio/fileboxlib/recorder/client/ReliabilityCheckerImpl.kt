@@ -4,8 +4,9 @@ import com.lyrebirdstudio.fileboxlib.core.Record
 import com.lyrebirdstudio.fileboxlib.recorder.RecordReliabilityChecker
 import java.util.*
 
-class ReliabilityCheckerImpl(private val timeToLiveInMillis: Long) :
-    RecordReliabilityChecker<Record> {
+internal class ReliabilityCheckerImpl(
+    private val timeToLiveInMillis: Long
+) : RecordReliabilityChecker<Record> {
 
     override fun isReliable(record: Record): Boolean {
         if (record.isEmpty()) {

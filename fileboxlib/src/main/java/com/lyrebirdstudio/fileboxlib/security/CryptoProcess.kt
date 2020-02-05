@@ -2,7 +2,7 @@ package com.lyrebirdstudio.fileboxlib.security
 
 import java.io.File
 
-sealed class CryptoProcess {
+internal sealed class CryptoProcess {
 
     data class Processing(val percentage: Int) : CryptoProcess()
 

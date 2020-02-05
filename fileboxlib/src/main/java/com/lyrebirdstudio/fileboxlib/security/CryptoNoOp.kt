@@ -6,7 +6,7 @@ import java.io.File
 import java.io.InputStream
 import java.io.OutputStream
 
-class CryptoNoOp : Crypto {
+internal class CryptoNoOp : Crypto {
 
     override fun encrypt(originFile: File, destinationFile: File): Flowable<CryptoProcess> {
         return Flowable.just(CryptoProcess.complete(originFile))

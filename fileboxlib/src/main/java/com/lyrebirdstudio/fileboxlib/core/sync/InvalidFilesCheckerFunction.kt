@@ -4,7 +4,7 @@ import com.lyrebirdstudio.fileboxlib.core.Record
 import io.reactivex.functions.BiFunction
 import java.io.File
 
-class InvalidFilesCheckerFunction : BiFunction<List<Record>, List<File>, List<File>> {
+internal class InvalidFilesCheckerFunction : BiFunction<List<Record>, List<File>, List<File>> {
 
     override fun apply(records: List<Record>, files: List<File>): List<File> {
         val recordMap = hashMapOf<String, Record>()

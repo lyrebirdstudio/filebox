@@ -4,8 +4,7 @@ import android.content.Context
 import java.io.File
 import java.io.FileNotFoundException
 
-open class ExternalRootFileProvider(private val appContext: Context) :
-    RootFileProvider {
+internal class ExternalRootFileProvider(private val appContext: Context) : RootFileProvider {
 
     override fun getRootFile(folderName: String): File {
         val externalFolder =

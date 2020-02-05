@@ -1,3 +1,3 @@
 package com.lyrebirdstudio.fileboxlib.downloader.client
 
-class DownloaderClientRequest(val url: String)
+internal class DownloaderClientRequest(val url: String)

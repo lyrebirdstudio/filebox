@@ -3,7 +3,7 @@ package com.lyrebirdstudio.fileboxlib.security
 import android.content.Context
 import com.lyrebirdstudio.fileboxlib.core.CryptoType
 
-object CryptoFactory {
+internal object CryptoFactory {
 
     fun create(cryptoType: CryptoType, context: Context): Crypto {
         val crypto = when (cryptoType) {

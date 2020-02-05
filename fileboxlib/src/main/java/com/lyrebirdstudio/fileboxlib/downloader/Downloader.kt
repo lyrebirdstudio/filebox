@@ -3,7 +3,7 @@ package com.lyrebirdstudio.fileboxlib.downloader
 import io.reactivex.Flowable
 
 
-interface Downloader {
+internal interface Downloader {
 
     fun download(downloadRequest: DownloadRequest): Flowable<DownloadResponse>
 }

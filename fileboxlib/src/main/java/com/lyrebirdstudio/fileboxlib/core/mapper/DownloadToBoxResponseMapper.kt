@@ -3,8 +3,8 @@ package com.lyrebirdstudio.fileboxlib.core.mapper
 import com.lyrebirdstudio.fileboxlib.core.FileBoxResponse
 import com.lyrebirdstudio.fileboxlib.downloader.DownloadResponse
 
-class DownloadToFileBoxResponseMapper :
-    Mapper<DownloadResponse, FileBoxResponse> {
+internal class DownloadToFileBoxResponseMapper : Mapper<DownloadResponse, FileBoxResponse> {
+
     override fun map(input: DownloadResponse): FileBoxResponse {
         return when (input) {
             is DownloadResponse.Started -> FileBoxResponse.Started(input.record)

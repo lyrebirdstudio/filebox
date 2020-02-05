@@ -2,7 +2,7 @@ package com.lyrebirdstudio.fileboxlib.downloader.client
 
 import java.util.concurrent.TimeUnit
 
-interface DownloaderClientConfigBuilder {
+internal interface DownloaderClientConfigBuilder {
 
     fun build(): DownloaderClientConfig
 
@@ -12,11 +12,9 @@ interface DownloaderClientConfigBuilder {
 
     class Builder : DownloaderClientConfigBuilder {
 
-        private var connectionTimeoutInMillis =
-            Defaults.connectionTimeout()
+        private var connectionTimeoutInMillis = Defaults.connectionTimeout()
 
-        private var readTimeoutInMillis =
-            Defaults.readTimeout()
+        private var readTimeoutInMillis = Defaults.readTimeout()
 
         override fun connectionTimeout(
             duration: Long,

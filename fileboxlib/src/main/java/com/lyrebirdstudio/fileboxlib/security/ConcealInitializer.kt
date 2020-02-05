@@ -6,9 +6,8 @@ import com.facebook.android.crypto.keychain.SharedPrefsBackedKeyChain
 import com.facebook.crypto.Crypto
 import com.facebook.crypto.CryptoConfig
 import com.facebook.soloader.SoLoader
-import java.lang.Exception
 
-object ConcealInitializer {
+internal object ConcealInitializer {
 
     private var isNativeLoaderInitialized = false
 

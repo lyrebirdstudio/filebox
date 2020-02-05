@@ -11,7 +11,7 @@ import java.io.BufferedOutputStream
 import java.io.FileOutputStream
 import java.util.*
 
-class DownloaderImpl(
+internal class DownloaderImpl(
     private val downloaderClient: DownloaderClient,
     private val downloaderConfig: DownloaderConfig,
     private val crypto: Crypto
