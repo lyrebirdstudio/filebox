@@ -10,14 +10,14 @@ import okhttp3.Response
 import java.io.IOException
 import java.lang.Exception
 
-class OkhttpDownloaderClient(private val okhttpClient: OkHttpClient) :
+class OkHttpDownloaderClient(private val okHttpClient: OkHttpClient) :
     DownloaderClient {
 
     override fun execute(downloaderClientRequest: DownloaderClientRequest): Single<DownloaderClientResponse> {
         return Single.create {
             try {
                 val request = Request.Builder().url(downloaderClientRequest.url).build()
-                val response = okhttpClient.newCall(request).execute()
+                val response = okHttpClient.newCall(request).execute()
                 val byteStream = response.body()?.byteStream()
                 val contentLength = response.body()?.contentLength() ?: 0L
                 val etag = getETag(response) ?: ""

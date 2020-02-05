@@ -34,7 +34,7 @@ class SyncController(private val recorder: Recorder, private val fileController:
         }
     }
 
-    fun isSyncComplete(): Boolean {
+    fun isSyncCompleted(): Boolean {
         return isInvalidFilesDeleted && isOldRecordsDeleted
     }
 
